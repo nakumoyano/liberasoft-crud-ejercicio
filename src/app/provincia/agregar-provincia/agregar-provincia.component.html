@@ -1,7 +1,9 @@
 <div class="container">
-  <form [formGroup]="formulario" *ngIf="formulario.value">
-    <div class="mb-3">
-      <label for="inputNombre" class="form-label">CP</label>
+  <h1 *ngIf="!isEdit">Agrega una nueva Provincia</h1>
+  <h1 *ngIf="isEdit">Editar Provincia</h1>
+  <form [formGroup]="formulario" *ngIf="formulario.value" class="form">
+    <div class="mb-3 input">
+      <label for="inputNombre" class="">CP <span>*</span></label>
 
       <input
         pInputText
@@ -18,8 +20,8 @@
         CP es requerido
       </span>
     </div>
-    <div class="mb-3">
-      <label for="inputId" class="form-label">ID</label>
+    <div class="mb-3 input">
+      <label for="inputId" class="form-label">ID <span>*</span></label>
 
       <input
         pInputText
@@ -36,8 +38,8 @@
         ID es requerido
       </span>
     </div>
-    <div class="mb-3">
-      <label for="CIUDADID" class="form-label">CIUDADID</label>
+    <div class="mb-3 input">
+      <label for="CIUDADID" class="form-label">CIUDADID <span>*</span></label>
       <input
         pInputText
         type="text"
@@ -54,8 +56,8 @@
         CIUDADID es requerido
       </span>
     </div>
-    <div class="mb-3">
-      <label for="inputEdad" class="form-label">PROVINCIA</label>
+    <div class="mb-3 input">
+      <label for="inputEdad" class="form-label">PROVINCIA <span>*</span></label>
       <input
         type="text"
         pInputText
@@ -88,7 +90,7 @@
     <button
       pButton
       type="submit"
-      class="p-button-primary"
+      class="btn p-button-primary"
       *ngIf="isEdit"
       (click)="editar()"
     >

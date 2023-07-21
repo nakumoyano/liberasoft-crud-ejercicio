@@ -71,12 +71,13 @@ export class AgregarProvinciaComponent implements OnInit {
             this.router.navigate(['']);
           },
           error: (e) => {
+            alert('Error al editar la provincia');
             console.error(e);
           },
         })
       );
     } else {
-      alert('Error al editar provincia, revise e intente nuevamente');
+      alert('Complete los campos obligatorios');
     }
   }
 

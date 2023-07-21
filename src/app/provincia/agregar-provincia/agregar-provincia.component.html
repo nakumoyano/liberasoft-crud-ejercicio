@@ -1,0 +1,101 @@
+<div class="container">
+  <form [formGroup]="formulario" *ngIf="formulario.value">
+    <div class="mb-3">
+      <label for="inputNombre" class="form-label">CP</label>
+
+      <input
+        pInputText
+        type="text"
+        class="ng-invalid"
+        id="inputNombre"
+        formControlName="CP"
+        [class.ng-invalid]="controlCp.touched && controlCp.hasError('required')"
+      />
+      <span
+        *ngIf="controlCp.touched && controlCp.hasError('required')"
+        class="ng-invalid"
+      >
+        CP es requerido
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="inputId" class="form-label">ID</label>
+
+      <input
+        pInputText
+        type="number"
+        class="ng-invalid"
+        id="inputId"
+        formControlName="ID"
+        [class.ng-invalid]="controlID.touched && controlID.hasError('required')"
+      />
+      <span
+        *ngIf="controlID.touched && controlID.hasError('required')"
+        class="ng-invalid"
+      >
+        ID es requerido
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="CIUDADID" class="form-label">CIUDADID</label>
+      <input
+        pInputText
+        type="text"
+        class="form-control"
+        id="CIUDADID"
+        formControlName="CIUDADID"
+        [class.is-invalid]="
+          controlCiudadId.touched && controlCiudadId.hasError('required')
+        "
+      />
+      <span
+        *ngIf="controlCiudadId.touched && controlCiudadId.hasError('required')"
+      >
+        CIUDADID es requerido
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="inputEdad" class="form-label">PROVINCIA</label>
+      <input
+        type="text"
+        pInputText
+        class="form-control"
+        id="inputEdad"
+        formControlName="PROVINCIA"
+        [class.is-invalid]="
+          controlProvincia.touched && controlProvincia.hasError('required')
+        "
+      />
+      <span
+        *ngIf="
+          controlProvincia.touched && controlProvincia.hasError('required')
+        "
+      >
+        PROVINCIA es requerida
+      </span>
+    </div>
+
+    <button
+      pButton
+      pRipple
+      type="submit"
+      class="btn btn-primary"
+      *ngIf="!isEdit"
+      (click)="guardar()"
+    >
+      Guardar
+    </button>
+    <button
+      pButton
+      type="submit"
+      class="p-button-primary"
+      *ngIf="isEdit"
+      (click)="editar()"
+    >
+      Editar
+    </button>
+    <button pButton type="submit" class="p-button-secondary" routerLink="">
+      Cancelar
+    </button>
+  </form>
+</div>

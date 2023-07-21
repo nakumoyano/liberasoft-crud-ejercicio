@@ -17,12 +17,11 @@ import { ProvinciaService } from 'src/app/services/provincia.service';
 })
 export class AgregarProvinciaComponent implements OnInit {
   formulario: FormGroup;
+
   isEdit: boolean = false;
 
   provincia: Provincia;
 
-  idSeleccionado: number; // Suponiendo que ya tienes el ID de la provincia seleccionada
-  provinciaSeleccionada: Provincia;
   private subscription = new Subscription();
 
   constructor(
